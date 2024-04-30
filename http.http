@@ -1,0 +1,30 @@
+GET http://localhost:3000/api/v1/ HTTP/1.1
+
+###
+
+POST http://localhost:3000/api/v1/register HTTP/1.1
+content-type: application/json
+
+{
+    "email": "admin@admin.com",
+    "password": "password",
+    "name": "admin",
+    "lastName": "admin"
+}
+
+###
+
+POST http://localhost:3000/api/v1/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "admin@admin.com",
+    "password": "password",
+    "name": "admin",
+    "lastName": "admin"
+}
+
+###
+
+GET http://localhost:3000/api/v1/profile
+Content-Type: application/json

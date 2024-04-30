@@ -1,0 +1,31 @@
+{
+  "name": "ecommerce-api",
+  "description": "E-commerce-API",
+  "private": true,
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Xpronoob",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.10.2",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.4",
+    "express": "^4.18.2",
+    "joi": "^17.12.1",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.9.1"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^3.0.3",
+    "prisma": "^5.13.0",
+    "standard": "^17.1.0"
+  }
+}

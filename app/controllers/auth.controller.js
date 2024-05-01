@@ -1,4 +1,4 @@
-import { login, register, logout, profile } from '../services/auth.services.js'
+import { login, register, logout, profile } from '../services/auth.service.js'
 
 export const registerUser = (req, res) => {
   register(req, res)

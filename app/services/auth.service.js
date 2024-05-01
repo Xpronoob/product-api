@@ -1,13 +1,12 @@
 import bcrypt from 'bcrypt'
-import { validateAccount } from '../models/user.js'
+import { validateAccount } from '../models/user.model.js'
 // import { pool } from '../../database/mysq.local.js'
 import { PrismaClient } from '@prisma/client'
 import dotenv from 'dotenv'
-import { signToken } from './jwt.services.js'
+import { signToken } from './jwt.service.js'
 
 dotenv.config()
 
-//* TODO: JWT SIGN
 const prisma = new PrismaClient()
 
 export const register = async (req, res) => {
@@ -42,7 +41,6 @@ export const register = async (req, res) => {
   }
 }
 
-//* TODO: JWT SIGN
 export const login = async (req, res) => {
   try {
     const { email, password } = req.body

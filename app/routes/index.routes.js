@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import { authRouter } from './auth.routes.js'
+import { categoryRouter } from './category.routes.js'
 
 const router = Router()
 
@@ -9,5 +10,6 @@ router.get('/', (req, res) => {
 })
 
 router.use(authRouter)
+router.use(categoryRouter)
 
 export { router }

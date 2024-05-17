@@ -27,6 +27,11 @@ content-type: application/json
     "password": "password"
 }
 
+### Logout
+
+POST http://localhost:3000/api/v1/logout HTTP/1.1
+content-type: application/json
+
 ###Profile
 
 GET http://localhost:3000/api/v1/profile HTTP/1.1
@@ -58,7 +63,7 @@ Content-Type: application/json
 
 ### Update
 
-PUT http://localhost:3000/api/v1/categories/55 HTTP/1.1
+PUT http://localhost:3000/api/v1/categories/1 HTTP/1.1
 Content-Type: application/json
 
 {

@@ -79,7 +79,15 @@ export const logout = (req, res) => {
 }
 
 export const profile = async (req, res) => {
-  const userFound = await prisma.user.findFirst(req.user.id)
+  const userFound = await prisma.user.findUnique({
+    where: {
+      id: req.user.id
+    }
+  })
+
+  // console.log(typeof req.user.id)
+  // console.log(`req.user.id = ${req.user.id}`)
+  // console.log(userFound)
   if (!userFound) return res.status(404).json({ message: 'User not found' })
 
   return res.json({

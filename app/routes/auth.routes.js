@@ -11,6 +11,7 @@ import { verifyToken } from '../middlewares/auth.middleware.js'
 export const authRouter = Router()
 
 // User registration
+// authRouter.post('/register', registerUser)
 authRouter.post('/register', (req, res) => {
   registerUser(req, res)
 })

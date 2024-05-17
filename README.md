@@ -1,40 +1,85 @@
-# Ecommerce API
+# Product API
 
-This API provides an ecommerce system.
+This API provides a product & category system.
 
 ## Public Routes:
 
 ### Get Index
-GET http://localhost:3000/api/v1/ HTTP/1.1
-
+	GET http://localhost:4000/api/v1/ HTTP/1.1
 Returns a hello message (JSON).
 
-## Authentication:
+## Categories:
 
-### User Register
-POST http://localhost:3000/api/v1/register HTTP/1.1
-content-type: application/json
-{
-	"email": "admin@admin.com",
-	"password": "password",
-	"name": "admin",
-	"lastName": "admin"
-}
+### GetMany
+	GET http://localhost:4000/api/v1/categories HTTP/1.1
+	Content-Type: application/json
+Get a list of categories (JSON).
 
-Generates a token and stores it in a cookie, then returns user information (JSON).
+### GetOne
+	GET http://localhost:4000/api/v1/categories/1 HTTP/1.1
+	Content-Type: application/json
+Get details of a specific category by ID (JSON).
 
-### User Login
-POST http://localhost:3000/api/v1/login HTTP/1.1
-content-type: application/json
-{
-	"email": "admin@admin.com",
-	"password": "password"
-}
+### Create
+	POST http://localhost:4000/api/v1/categories HTTP/1.1
+	Content-Type: application/json
+	{
+		"name": "New Category",
+		"description": "New Description Category"
+	}
+Create a new category with the given name and description.
 
-This route allows a user to log in to the application. You must send a JSON object with the email and password fields.
+### Update
+	PUT http://localhost:4000/api/v1/categories/1 HTTP/1.1
+	Content-Type: application/json
+	{
+		"name": "Categories",
+		"description": "Description"
+	}
+Update an existing category by ID with the given name and description.
 
-### Get User Profile
-GET http://localhost:3000/api/v1/profile
-Content-Type: application/json
+### Delete
+	DELETE http://localhost:4000/api/v1/categories/55 HTTP/1.1
+	Content-Type: application/json
+Delete a category by ID.
 
-This route returns the information of the authenticated user(JSON).
+## Products:
+
+### GetMany
+	GET http://localhost:4000/api/v1/products HTTP/1.1
+	Content-Type: application/json
+Get a list of products (JSON).
+
+### GetOne
+	GET http://localhost:4000/api/v1/products/1 HTTP/1.1
+	Content-Type: application/json
+Get details of a specific product by ID (JSON).
+
+### Create
+	POST http://localhost:4000/api/v1/products HTTP/1.1
+	Content-Type: application/json
+	{
+		"name": "New Product",
+		"description": "New Description",
+		"price": 19.99,
+		"stock": 100,
+		"categoryId": 1
+	}
+Create a new product with the given details.
+
+### Update
+	PUT http://localhost:4000/api/v1/products/1 HTTP/1.1
+	Content-Type: application/json
+	{
+		"name": "Updated Product",
+		"description": "Updated Description",
+		"price": 24.99,
+		"stock": 50,
+		"categoryId": 2
+	}
+Update an existing product by ID with the given details.
+
+### Delete
+	DELETE http://localhost:4000/api/v1/products/55 HTTP/1.1
+	Content-Type: application/json
+Delete a product by ID.

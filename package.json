@@ -1,11 +1,12 @@
 {
-  "name": "ecommerce-api",
-  "description": "E-commerce-API",
+  "name": "product-api",
+  "description": "Product-API",
   "private": true,
   "version": "1.0.0",
   "main": "app.js",
   "type": "module",
   "scripts": {
+    "start": "node app.js",
     "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
